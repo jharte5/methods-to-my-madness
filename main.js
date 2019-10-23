@@ -16,15 +16,26 @@ function repeat(str, repetitions) {
 }
 
 function startsWith(string, substring) {
-  let newString = '';
+  
   for (let i = 0; i < substring.length; i++) {
-    newString = newString + string[i].length
-
+    
+    if(string[i] !== substring[i]) {
+      return false
+    }
   }
-  return newString
+  return true
+  
 }
 
 function endsWith(str, substring) {
+  for (let i = 0; i < substring.length; i++) {
+    
+    if(str[i] !== substring[i]) {
+      return false
+    }else {
+      str[i] === 0
+    } return true
+  }
 }
 
 function includes(arr, item) {
