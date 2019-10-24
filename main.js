@@ -28,17 +28,25 @@ function startsWith(string, substring) {
 }
 
 function endsWith(str, substring) {
-  for (let i = 0; i < substring.length; i++) {
-    
-    if(str[i] !== substring[i]) {
-      return false
-    }else {
-      str[i] === 0
-    } return true
+  for (let i = 0; i <= substring.length; i++) {
+    const substringIndex = substring.length - i;
+    const strIndex = str.length - i;
+    if (str[strIndex] !== substring[substringIndex]) {
+      return false;
+    }
   }
+
+  return true;
 }
 
 function includes(arr, item) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === item) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function join(arr, separator = '') {
@@ -52,6 +60,15 @@ function trimStart(str) {
 }
 
 function trimEnd(str) {
+  let trimmed = '';
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    if (str[i] !== ' ') {
+      return str.slice(0, i + 1);
+    }
+  }
+
+  return trimmed;
 }
 
 
